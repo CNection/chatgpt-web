@@ -1,3 +1,5 @@
+import https from 'https'
+import fs from 'fs'
 import express from 'express'
 import type { RequestProps } from './types'
 import type { ChatMessage } from './chatgpt'
@@ -86,4 +88,10 @@ app.use('', router)
 app.use('/api', router)
 app.set('trust proxy', 1)
 
-app.listen(3002, () => globalThis.console.log('Server is running on port 3002'))
+// 配置https
+const options = {
+  key: fs.readFileSync('C:\\Certbot\\live\\cnection.cn\\privkey.pem'),
+  cert: fs.readFileSync('C:\\Certbot\\live\\cnection.cn\\fullchain.pem'),
+}
+
+https.createServer(options, app).listen(3002, () => globalThis.console.log('Server is running on port 3002'))
