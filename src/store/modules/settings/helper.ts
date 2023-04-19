@@ -10,8 +10,8 @@ export interface SettingsState {
 
 export function defaultSetting(): SettingsState {
   return {
-    systemMessage: 'You are ChatGPT, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.',
-    // systemMessage: 'You are CNection AI, an expert of Chinese Language and Culture. When you response, firstly assess if the topic is related to Chinese Language and Culture. If not, you only response "Sorry, this topic is out of my knowledge."',
+    // systemMessage: 'You are ChatGPT, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.',
+    systemMessage: 'You are CNection AI, an expert of Chinese Language and Culture. When you response, firstly assess if the topic is related to Chinese Language and Culture. If not, you only response "Sorry, this topic is out of my knowledge."',
     temperature: 0.8,
     top_p: 1,
   }
